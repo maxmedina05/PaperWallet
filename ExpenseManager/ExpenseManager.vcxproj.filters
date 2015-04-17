@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\models">
+      <UniqueIdentifier>{123886e4-3510-44fa-97c1-86fe9185161c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\repository">
+      <UniqueIdentifier>{facbd86d-1a65-4e6a-99bc-1a907396894f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\models">
+      <UniqueIdentifier>{ee469732-0368-433e-a9b5-c28be87a3a28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\repository">
+      <UniqueIdentifier>{3a0cb50e-2b04-46bf-9e75-8f87656de714}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\presenter">
+      <UniqueIdentifier>{f406cea9-a6b6-45bd-97e6-2153d7bb3cab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\view">
+      <UniqueIdentifier>{a22d1eb9-08a2-4544-b6a5-be17bb41d9a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\view">
+      <UniqueIdentifier>{c2db696c-57a2-45de-8d69-288cb7e2b834}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\presenter">
+      <UniqueIdentifier>{52ad8613-a8a2-4b49-b58e-9aa33ea3435d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Account.cpp">
+      <Filter>Source Files\models</Filter>
+    </ClCompile>
+    <ClCompile Include="Category.cpp">
+      <Filter>Source Files\models</Filter>
+    </ClCompile>
+    <ClCompile Include="Date.cpp">
+      <Filter>Source Files\models</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files\models</Filter>
+    </ClCompile>
+    <ClCompile Include="Particular.cpp">
+      <Filter>Source Files\models</Filter>
+    </ClCompile>
+    <ClCompile Include="PaymentMethod.cpp">
+      <Filter>Source Files\models</Filter>
+    </ClCompile>
+    <ClCompile Include="Transaction.cpp">
+      <Filter>Source Files\models</Filter>
+    </ClCompile>
+    <ClCompile Include="AccountRepository.cpp">
+      <Filter>Source Files\repository</Filter>
+    </ClCompile>
+    <ClCompile Include="CategoryRepository.cpp">
+      <Filter>Source Files\repository</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticularRepository.cpp">
+      <Filter>Source Files\repository</Filter>
+    </ClCompile>
+    <ClCompile Include="PaymentMethodRepository.cpp">
+      <Filter>Source Files\repository</Filter>
+    </ClCompile>
+    <ClCompile Include="TransactionRepository.cpp">
+      <Filter>Source Files\repository</Filter>
+    </ClCompile>
+    <ClCompile Include="AccountView.cpp">
+      <Filter>Source Files\view</Filter>
+    </ClCompile>
+    <ClCompile Include="AccountPresenter.cpp">
+      <Filter>Source Files\presenter</Filter>
+    </ClCompile>
+    <ClCompile Include="CategoryView.cpp">
+      <Filter>Source Files\view</Filter>
+    </ClCompile>
+    <ClCompile Include="CategoryPresenter.cpp">
+      <Filter>Source Files\presenter</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticularView.cpp">
+      <Filter>Source Files\view</Filter>
+    </ClCompile>
+    <ClCompile Include="TransactionView.cpp">
+      <Filter>Source Files\view</Filter>
+    </ClCompile>
+    <ClCompile Include="PaymentMethodView.cpp">
+      <Filter>Source Files\view</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticularPresenter.cpp">
+      <Filter>Source Files\presenter</Filter>
+    </ClCompile>
+    <ClCompile Include="PaymentMethodPresenter.cpp">
+      <Filter>Source Files\presenter</Filter>
+    </ClCompile>
+    <ClCompile Include="TransactionPresenter.cpp">
+      <Filter>Source Files\presenter</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Account.h">
+      <Filter>Header Files\models</Filter>
+    </ClInclude>
+    <ClInclude Include="Category.h">
+      <Filter>Header Files\models</Filter>
+    </ClInclude>
+    <ClInclude Include="Date.h">
+      <Filter>Header Files\models</Filter>
+    </ClInclude>
+    <ClInclude Include="Particular.h">
+      <Filter>Header Files\models</Filter>
+    </ClInclude>
+    <ClInclude Include="PaymentMethod.h">
+      <Filter>Header Files\models</Filter>
+    </ClInclude>
+    <ClInclude Include="Transaction.h">
+      <Filter>Header Files\models</Filter>
+    </ClInclude>
+    <ClInclude Include="IRepository.h">
+      <Filter>Header Files\repository</Filter>
+    </ClInclude>
+    <ClInclude Include="IEntity.h">
+      <Filter>Header Files\models</Filter>
+    </ClInclude>
+    <ClInclude Include="AccountRepository.h">
+      <Filter>Header Files\repository</Filter>
+    </ClInclude>
+    <ClInclude Include="CategoryRepository.h">
+      <Filter>Header Files\repository</Filter>
+    </ClInclude>
+    <ClInclude Include="PaymentMethodRepository.h">
+      <Filter>Header Files\repository</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticularRepository.h">
+      <Filter>Header Files\repository</Filter>
+    </ClInclude>
+    <ClInclude Include="TransactionRepository.h">
+      <Filter>Header Files\repository</Filter>
+    </ClInclude>
+    <ClInclude Include="IView.h">
+      <Filter>Header Files\view</Filter>
+    </ClInclude>
+    <ClInclude Include="IPresenter.h">
+      <Filter>Header Files\presenter</Filter>
+    </ClInclude>
+    <ClInclude Include="AccountView.h">
+      <Filter>Header Files\view</Filter>
+    </ClInclude>
+    <ClInclude Include="AccountPresenter.h">
+      <Filter>Header Files\presenter</Filter>
+    </ClInclude>
+    <ClInclude Include="TransactionView.h">
+      <Filter>Header Files\view</Filter>
+    </ClInclude>
+    <ClInclude Include="CategoryView.h">
+      <Filter>Header Files\view</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticularView.h">
+      <Filter>Header Files\view</Filter>
+    </ClInclude>
+    <ClInclude Include="PaymentMethodView.h">
+      <Filter>Header Files\view</Filter>
+    </ClInclude>
+    <ClInclude Include="CategoryPresenter.h">
+      <Filter>Header Files\presenter</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticularPresenter.h">
+      <Filter>Header Files\presenter</Filter>
+    </ClInclude>
+    <ClInclude Include="PaymentMethodPresenter.h">
+      <Filter>Header Files\presenter</Filter>
+    </ClInclude>
+    <ClInclude Include="TransactionPresenter.h">
+      <Filter>Header Files\presenter</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
