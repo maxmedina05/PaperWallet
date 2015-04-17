@@ -12,7 +12,7 @@ public:
 	void OnCreate() override;
 	void OnDestroy() override;
 	void showMenu();
-	void listView(vector<Account> accounts);
+	static void listView(vector<Account> accounts);
 	Account editView(Account account);
 	void showSuccessfulMessage();
 };

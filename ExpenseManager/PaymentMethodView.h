@@ -12,7 +12,7 @@ public:
 	void OnCreate() override;
 	void OnDestroy() override;
 	void showMenu();
-	void listView(vector<PaymentMethod> methods);
+	static void listView(vector<PaymentMethod> methods);
 
 	PaymentMethod editView(PaymentMethod method);
 	void showSuccessfulMessage();

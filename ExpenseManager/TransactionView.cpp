@@ -1,6 +1,5 @@
 #include "TransactionView.h"
 
-
 TransactionView::TransactionView()
 {
 
@@ -39,7 +38,7 @@ void TransactionView::listView(vector<Transaction> Transactions)
 	cout << "*****MANTENIMIENTO DE TRANSACCION*****\n" << endl;
 
 	cout << "Listado de transacciones: \n";
-	printf("%10s %10s %10s %10s %10s %10s %10s\n",
+	printf("%8s|%10s|%10s|%10s|%10s|%10s|%10s\n",
 		"ID",
 		"Date",
 		"Amount",
@@ -52,7 +51,8 @@ void TransactionView::listView(vector<Transaction> Transactions)
 		printf("-");
 
 	for (int i = 0; i < Transactions.size(); i++)
-		printf("%10d %10s %10f %10s %10s %10s %10s\n",
+		printf("%8d|%-10s|%10.2f|%-10s|%-10s|%-10s|%-10s\n",
+		//printf("%10d %10s %10f %10s %10s %10s %10s\n",
 		Transactions[i].getId(),
 		Transactions[i].getDate().toString().c_str(),
 		Transactions[i].getAmount(),
@@ -62,21 +62,55 @@ void TransactionView::listView(vector<Transaction> Transactions)
 		Transactions[i].getPaymentMethod().getName().c_str()
 		);
 
-	cout << "0. Salir" << endl;
+	cout << endl;
 }
 
-Transaction TransactionView::editView(Transaction Transaction)
+Transaction TransactionView::editView(Transaction Transaction,
+	int type,
+	vector<Account> accounts,
+	vector<Category> categories,
+	vector<PaymentMethod> methods,
+	vector<Particular> particulars)
 {
 	string buffer;
-	cout << "*****MANTENIMIENTO DE CATEGORIA*****" << endl;
+	int value;
+	double rvalue;
+
 	cout << '\n';
 	cin.clear();
 	cin.sync();
 
-	printf("editar categoria ID(%d): \n", Transaction.getId());
+	printf("editar transaction ID(%d): \n", Transaction.getId());
 
-	cout << "Nombre: ";
+	AccountView::listView(accounts);
+	cout << "cuenta Id:";
+	cin >> value;
+	Transaction.setAccount(accounts[value]);
+
+	cout << "Monto: ";
+	cin >> rvalue;
+	if (rvalue != 0)
+		Transaction.setAmount(rvalue);
+
+	if (type == INCOME)
+		ParticularView::listView(particulars, Payer);
+	if (type == EXPENSE)
+		ParticularView::listView(particulars, Payee);
+	
+	cout << "persona Id:";
+	cin >> value;
+	Transaction.setParticular(particulars[value]);
+
+	if (type == INCOME)
+	{
+		
+	}
+
+	cout << "Description: ";
 	getline(cin, buffer);
+
+	if (!buffer.empty())
+		Transaction.setDescription(buffer);
 
 	buffer.clear();
 	return Transaction;

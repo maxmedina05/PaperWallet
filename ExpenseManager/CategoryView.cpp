@@ -36,8 +36,6 @@ void CategoryView::showMenu()
 
 void CategoryView::listView(vector<Category> Categorys)
 {
-	cout << "*****MANTENIMIENTO DE CATEGORIA*****\n" << endl;
-
 	cout << "Listado de categorias: \n";
 	printf("%10s | %-20s\n",
 		"ID",
@@ -57,7 +55,6 @@ void CategoryView::listView(vector<Category> Categorys)
 Category CategoryView::editView(Category Category)
 {
 	string buffer;
-	cout << "*****MANTENIMIENTO DE CATEGORIA*****" << endl;
 	cout << '\n';
 
 	cin.clear();

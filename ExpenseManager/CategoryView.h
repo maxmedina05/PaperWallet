@@ -12,7 +12,7 @@ public:
 	void OnCreate() override;
 	void OnDestroy() override;
 	void showMenu();
-	void listView(vector<Category> categories);
+	static void listView(vector<Category> categories);
 
 	Category editView(Category category);
 	void showSuccessfulMessage();

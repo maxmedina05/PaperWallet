@@ -60,5 +60,15 @@ void TransactionPresenter::Callback()
 }
 
 void TransactionPresenter::LoadList(){
+	Transaction transaction;
+	transaction.setId(1);
+	transaction.setAccount(Account("Max's Account", "Personal"));
+	transaction.setAmount(1000);
+	transaction.setCategory(Category("Income"));
+	transaction.setDescription("Stuff i buy");
+	transaction.setParticular(Particular("Max", Payer));
+	transaction.setPaymentMethod(PaymentMethod("Cash"));
+	transaction.setDate(Date());
+	_repo.add(transaction);
 
 }
