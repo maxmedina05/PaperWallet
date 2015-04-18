@@ -3,6 +3,7 @@
 
 Transaction::Transaction()
 {
+	_Id = 0;
 }
 
 

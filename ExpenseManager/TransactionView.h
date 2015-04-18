@@ -16,8 +16,8 @@ public:
 	TransactionView();
 	~TransactionView();
 
-	void OnCreate() override;
-	void OnDestroy() override;
+	void OnViewCreated() override;
+	void OnViewDestroyed() override;
 	void showMenu();
 	void listView(vector<Transaction> transactions);
 
@@ -27,5 +27,6 @@ public:
 		vector<Category> categories,
 		vector<PaymentMethod> methods,
 		vector<Particular> particulars);
+
 	void showSuccessfulMessage();
 };

@@ -12,6 +12,9 @@ CategoryRepository::~CategoryRepository()
 
 bool CategoryRepository::add(Category entity)
 {
+	static int idseed = 0;
+	entity.setId(idseed++);
+
 	_categories.push_back(entity);
 	return true;
 }
@@ -53,4 +56,11 @@ bool CategoryRepository::remove(Category entity)
 vector<Category> CategoryRepository::getAll()
 {
 	return _categories;
+}
+
+void CategoryRepository::mockfill()
+{
+	this->add(Category("Income"));
+	this->add(Category("Household"));
+	this->add(Category("Loan"));
 }

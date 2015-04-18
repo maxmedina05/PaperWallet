@@ -1,4 +1,6 @@
 #include "TransactionView.h"
+#include "CategoryView.h"
+#include "PaymentMethodView.h"
 
 TransactionView::TransactionView()
 {
@@ -10,12 +12,12 @@ TransactionView::~TransactionView()
 
 }
 
-void TransactionView::OnCreate()
+void TransactionView::OnViewCreated()
 {
 	//showMenu();
 }
 
-void TransactionView::OnDestroy()
+void TransactionView::OnViewDestroyed()
 {
 
 }
@@ -83,30 +85,49 @@ Transaction TransactionView::editView(Transaction Transaction,
 	printf("editar transaction ID(%d): \n", Transaction.getId());
 
 	AccountView::listView(accounts);
-	cout << "cuenta Id:";
+	cout << "Introduzca el codigo de la cuenta:";
 	cin >> value;
 	Transaction.setAccount(accounts[value]);
 
-	cout << "Monto: ";
+	cout << "Introduzca el monto: ";
 	cin >> rvalue;
+
 	if (rvalue != 0)
 		Transaction.setAmount(rvalue);
 
-	if (type == INCOME)
+	if (type == INCOME){
+		Transaction.setCategory(categories[0]);
+	}
+
+	else{
+		CategoryView::listView(categories);
+		cout << "Introduzca el codigo de la categoria: ";
+		cin >> value;
+		Transaction.setCategory(categories[value]);
+	}
+
+	PaymentMethodView::listView(methods);
+	cout << "Introduzca el codigo del metodo de pago: ";
+	cin >> value;
+	Transaction.setPaymentMethod(methods[value]);
+
+	if (type == INCOME){
 		ParticularView::listView(particulars, Payer);
-	if (type == EXPENSE)
+		cout << "Introduzca el codigo del pagador: ";
+	}
+
+	if (type == EXPENSE){
 		ParticularView::listView(particulars, Payee);
-	
-	cout << "persona Id:";
+		cout << "Introduzca el codigo del beneficiario: ";
+	}
+
 	cin >> value;
 	Transaction.setParticular(particulars[value]);
 
-	if (type == INCOME)
-	{
-		
-	}
+	cin.clear();
+	cin.sync();
 
-	cout << "Description: ";
+	cout << "Introduzca una breve description: ";
 	getline(cin, buffer);
 
 	if (!buffer.empty())

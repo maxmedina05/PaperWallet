@@ -11,6 +11,9 @@ TransactionRepository::~TransactionRepository()
 
 bool TransactionRepository::add(Transaction entity)
 {
+	static int idseed = 0;
+	entity.setId(idseed++);
+
 	_transactions.push_back(entity);
 	return true;
 }
@@ -53,4 +56,18 @@ bool TransactionRepository::remove(Transaction entity)
 vector<Transaction> TransactionRepository::getAll()
 {
 	return _transactions;
+}
+
+void TransactionRepository::mockfill()
+{
+	Transaction transaction;
+	transaction.setId(1);
+	transaction.setAccount(Account("Max's Account", "Personal"));
+	transaction.setAmount(1000);
+	transaction.setCategory(Category("Income"));
+	transaction.setDescription("Stuff i buy");
+	transaction.setParticular(Particular("Max", Payer));
+	transaction.setPaymentMethod(PaymentMethod("Cash"));
+	transaction.setDate(Date());
+	this->add(transaction);
 }

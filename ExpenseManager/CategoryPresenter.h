@@ -7,7 +7,7 @@
 class CategoryPresenter : public IPresenter{
 private:
 	CategoryView *_aview;
-	CategoryRepository _repo;
+	CategoryRepository* _repo;
 	Category _currentCategory;
 
 public:
@@ -16,4 +16,5 @@ public:
 	void LoadList();
 	void Callback();
 	void OptionMenuLoop();
+	void setRepository(CategoryRepository* repo);
 };

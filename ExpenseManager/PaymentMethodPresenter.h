@@ -7,7 +7,7 @@
 class PaymentMethodPresenter : public IPresenter{
 private:
 	PaymentMethodView *_aview;
-	PaymentMethodRepository _repo;
+	PaymentMethodRepository* _repo;
 	PaymentMethod _currentPaymentMethod;
 
 public:
@@ -16,4 +16,5 @@ public:
 	void LoadList();
 	void Callback();
 	void OptionMenuLoop();
+	void setRepository(PaymentMethodRepository* repo);
 };

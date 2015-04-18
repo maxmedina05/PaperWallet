@@ -11,34 +11,36 @@ ParticularView::~ParticularView()
 
 }
 
-void ParticularView::OnCreate()
+void ParticularView::showTitle()
 {
-	//showMenu();
+	cout << "*****MANTENIMIENTO DE PERSONA*****" << endl;
+	cout << '\n';
 }
 
-void ParticularView::OnDestroy()
+
+void ParticularView::OnViewCreated()
+{
+	showTitle();
+}
+
+void ParticularView::OnViewDestroyed()
 {
 
 }
 
 void ParticularView::showMenu()
 {
-	cout << "*****MANTENIMIENTO DE PERSONA*****" << endl;
-	cout << '\n';
-
 	cout << "1. Ver Listado." << endl;
-	cout << "2. Agregar categoria nueva." << endl;
-	cout << "3. Editar categoria." << endl;
-	cout << "4. Eliminar categoria." << endl;
+	cout << "2. Agregar persona nueva." << endl;
+	cout << "3. Editar persona." << endl;
+	cout << "4. Eliminar persona." << endl;
 
 	cout << "0. Salir" << endl;
 }
 
 void ParticularView::listView(vector<Particular> Particulars, ParticularType type)
 {
-	cout << "*****MANTENIMIENTO DE PERSONA*****\n" << endl;
-
-	cout << "Listado de categorias: \n";
+	cout << "Listado de personas: \n";
 	printf("%10s | %-20s\n",
 		"ID",
 		"Name");
@@ -52,15 +54,12 @@ void ParticularView::listView(vector<Particular> Particulars, ParticularType typ
 			Particulars[i].getId(),
 			Particulars[i].getName().c_str());
 	}
-
-	cout << "0. Salir" << endl;
 }
 
 Particular ParticularView::editView(Particular Particular)
 {
 	string buffer;
-	cout << "*****MANTENIMIENTO DE PERSONA*****" << endl;
-	cout << '\n';
+	showTitle();
 
 	printf("editar persona ID(%d): \n", Particular.getId());
 	cin.clear();

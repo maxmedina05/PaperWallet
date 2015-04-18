@@ -17,5 +17,6 @@ public:
 	virtual bool remove(PaymentMethod entity) override;
 	virtual vector<PaymentMethod> getAll() override;
 
+	void mockfill();
 };
 

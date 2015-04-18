@@ -9,8 +9,9 @@ public:
 	ParticularView();
 	~ParticularView();
 
-	void OnCreate() override;
-	void OnDestroy() override;
+	void OnViewCreated() override;
+	void OnViewDestroyed() override;
+	void showTitle() override;
 	void showMenu();
 	static void listView(vector<Particular> particulars, ParticularType type);
 	Particular editView(Particular particular);

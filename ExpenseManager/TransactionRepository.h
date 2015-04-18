@@ -17,5 +17,6 @@ public:
 	virtual bool remove(Transaction entity) override;
 	virtual vector<Transaction> getAll() override;
 
+	void mockfill();
 };
 

@@ -8,9 +8,9 @@ class AccountView : public IView
 public:
 	AccountView();
 	~AccountView();
-
-	void OnCreate() override;
-	void OnDestroy() override;
+	void showTitle() override;
+	void OnViewCreated() override;
+	void OnViewDestroyed() override;
 	void showMenu();
 	static void listView(vector<Account> accounts);
 	Account editView(Account account);

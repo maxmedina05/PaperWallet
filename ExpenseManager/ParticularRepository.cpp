@@ -12,6 +12,9 @@ ParticularRepository::~ParticularRepository()
 
 bool ParticularRepository::add(Particular entity)
 {
+	static int idseed = 0;
+	entity.setId(idseed);
+
 	_particulars.push_back(entity);
 	return true;
 }
@@ -54,4 +57,12 @@ bool ParticularRepository::remove(Particular entity)
 vector<Particular> ParticularRepository::getAll()
 {
 	return _particulars;
+}
+
+void ParticularRepository::mockfill()
+{
+	this->add(Particular("BanReservas", Payee));
+	this->add(Particular("PUCMM", Payee));
+	this->add(Particular("Supermercado Bravo", Payee));
+	this->add(Particular("FARD", Payer));
 }

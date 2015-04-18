@@ -12,11 +12,9 @@
  bool AccountRepository::add(Account entity)
 {
 	static int idseed = 0;
-	entity.setId(idseed);
+	entity.setId(idseed++);
 
 	_accounts.push_back(entity);
-	idseed++;
-
 	return true;
 }
 
@@ -61,3 +59,10 @@ vector<Account> AccountRepository::getAll()
 {
 	return _accounts;
 }
+
+void AccountRepository::mockFill()
+ {
+	 this->add(Account("Personal Account", "My Personal Account."));
+	 this->add(Account("Credit Card", "My Credit Card."));
+	 this->add(Account("Car's loan", "The loan I had to take to by a car."));
+ }

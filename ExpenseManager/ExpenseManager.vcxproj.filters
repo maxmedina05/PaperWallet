@@ -48,9 +48,6 @@
     <ClCompile Include="Date.cpp">
       <Filter>Source Files\models</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files\models</Filter>
-    </ClCompile>
     <ClCompile Include="Particular.cpp">
       <Filter>Source Files\models</Filter>
     </ClCompile>
@@ -103,6 +100,24 @@
       <Filter>Source Files\presenter</Filter>
     </ClCompile>
     <ClCompile Include="TransactionPresenter.cpp">
+      <Filter>Source Files\presenter</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RepositoryFactory.cpp">
+      <Filter>Source Files\repository</Filter>
+    </ClCompile>
+    <ClCompile Include="SettingView.cpp">
+      <Filter>Source Files\view</Filter>
+    </ClCompile>
+    <ClCompile Include="SettingPresenter.cpp">
+      <Filter>Source Files\presenter</Filter>
+    </ClCompile>
+    <ClCompile Include="HomeView.cpp">
+      <Filter>Source Files\view</Filter>
+    </ClCompile>
+    <ClCompile Include="HomePresenter.cpp">
       <Filter>Source Files\presenter</Filter>
     </ClCompile>
   </ItemGroup>
@@ -180,6 +195,21 @@
       <Filter>Header Files\presenter</Filter>
     </ClInclude>
     <ClInclude Include="TransactionPresenter.h">
+      <Filter>Header Files\presenter</Filter>
+    </ClInclude>
+    <ClInclude Include="RepositoryFactory.h">
+      <Filter>Header Files\repository</Filter>
+    </ClInclude>
+    <ClInclude Include="SettingView.h">
+      <Filter>Header Files\view</Filter>
+    </ClInclude>
+    <ClInclude Include="SettingPresenter.h">
+      <Filter>Header Files\presenter</Filter>
+    </ClInclude>
+    <ClInclude Include="HomeView.h">
+      <Filter>Header Files\view</Filter>
+    </ClInclude>
+    <ClInclude Include="HomePresenter.h">
       <Filter>Header Files\presenter</Filter>
     </ClInclude>
   </ItemGroup>

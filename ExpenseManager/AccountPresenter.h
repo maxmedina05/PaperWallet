@@ -7,7 +7,7 @@
 class AccountPresenter : public IPresenter{
 private:
 	AccountView *_aview;
-	AccountRepository _repo;
+	AccountRepository *_repo;
 	Account _currentAccount;
 
 public:
@@ -16,4 +16,6 @@ public:
 	void LoadList();
 	void Callback();
 	void OptionMenuLoop();
+	void setAccountRepo(AccountRepository *repo);
+	
 };

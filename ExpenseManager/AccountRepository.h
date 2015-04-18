@@ -17,5 +17,6 @@ public:
 	virtual bool remove(Account entity) override;
 	virtual vector<Account> getAll() override;
 
+	void mockFill();
 };
 

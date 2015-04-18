@@ -1,16 +1,17 @@
 #include "PaymentMethodPresenter.h"
 
-
 PaymentMethodPresenter::PaymentMethodPresenter(IView* view)
 	:IPresenter(view)
 {
 	_aview = static_cast<PaymentMethodView*>(_View);
+}
 
-	LoadList();
-
-	_View->OnCreate();
+void PaymentMethodPresenter::Initialize()
+{
+	_View->OnViewCreated();
 	OptionMenuLoop();
 }
+
 
 void PaymentMethodPresenter::OptionMenuLoop()
 {
@@ -25,17 +26,17 @@ void PaymentMethodPresenter::OptionMenuLoop()
 
 		switch (option){
 		case LIST:
-			_aview->listView(_repo.getAll());
+			_aview->listView(_repo->getAll());
 			break;
 		case ADD:
-			_repo.add(_aview->editView(PaymentMethod()));
+			_repo->add(_aview->editView(PaymentMethod()));
 			_aview->showSuccessfulMessage();
 			break;
 
 		case EDIT:
 			cout << "ID de la metodo de pago: ";
 			cin >> option;
-			_repo.update(_aview->editView(_repo.getById(option)));
+			_repo->update(_aview->editView(_repo->getById(option)));
 			_aview->showSuccessfulMessage();
 			break;
 
@@ -47,7 +48,7 @@ void PaymentMethodPresenter::OptionMenuLoop()
 			cin >> option;
 
 			if (option == 1){
-				_repo.remove(_repo.getById(option));
+				_repo->remove(_repo->getById(option));
 				_aview->showSuccessfulMessage();
 			}
 			break;
@@ -61,7 +62,12 @@ void PaymentMethodPresenter::Callback()
 }
 
 void PaymentMethodPresenter::LoadList(){
-	_repo.add(PaymentMethod("Efectivo"));
-	_repo.add(PaymentMethod("Credito"));
-	_repo.add(PaymentMethod("Transferencia"));
+	_repo->add(PaymentMethod("Efectivo"));
+	_repo->add(PaymentMethod("Credito"));
+	_repo->add(PaymentMethod("Transferencia"));
+}
+
+void PaymentMethodPresenter::setRepository(PaymentMethodRepository* repo)
+{
+	_repo = repo;
 }

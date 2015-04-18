@@ -11,21 +11,25 @@ CategoryView::~CategoryView()
 
 }
 
-void CategoryView::OnCreate()
+void CategoryView::OnViewCreated()
 {
-	//showMenu();
+	showTitle();
 }
 
-void CategoryView::OnDestroy()
+void CategoryView::OnViewDestroyed()
 {
 
 }
 
-void CategoryView::showMenu()
+void CategoryView::showTitle()
 {
 	cout << "*****MANTENIMIENTO DE CATEGORIA*****" << endl;
 	cout << '\n';
+}
 
+
+void CategoryView::showMenu()
+{
 	cout << "1. Ver Listado." << endl;
 	cout << "2. Agregar categoria nueva." << endl;
 	cout << "3. Editar categoria." << endl;

@@ -17,5 +17,6 @@ public:
 	virtual bool remove(Category entity) override;
 	virtual vector<Category> getAll() override;
 
+	void mockfill();
 };
 

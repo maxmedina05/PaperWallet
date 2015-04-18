@@ -9,11 +9,11 @@ public:
 	PaymentMethodView();
 	~PaymentMethodView();
 
-	void OnCreate() override;
-	void OnDestroy() override;
+	void OnViewCreated() override;
+	void OnViewDestroyed() override;
 	void showMenu();
 	static void listView(vector<PaymentMethod> methods);
-
+	void showTitle() override;
 	PaymentMethod editView(PaymentMethod method);
 	void showSuccessfulMessage();
 };

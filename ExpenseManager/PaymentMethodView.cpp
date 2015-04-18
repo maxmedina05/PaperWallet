@@ -6,25 +6,30 @@ PaymentMethodView::PaymentMethodView()
 
 }
 
+void PaymentMethodView::showTitle()
+{
+	cout << "*****MANTENIMIENTO DE METODO DE PAGO*****" << endl;
+	cout << '\n';
+}
+
 PaymentMethodView::~PaymentMethodView()
 {
 
 }
 
-void PaymentMethodView::OnCreate()
+void PaymentMethodView::OnViewCreated()
 {
-	//showMenu();
+	showTitle();
 }
 
-void PaymentMethodView::OnDestroy()
+void PaymentMethodView::OnViewDestroyed()
 {
 
 }
 
 void PaymentMethodView::showMenu()
 {
-	cout << "*****MANTENIMIENTO DE METODO DE PAGO*****" << endl;
-	cout << '\n';
+	showTitle();
 
 	cout << "1. Ver Listado." << endl;
 	cout << "2. Agregar categoria nueva." << endl;
@@ -36,8 +41,6 @@ void PaymentMethodView::showMenu()
 
 void PaymentMethodView::listView(vector<PaymentMethod> PaymentMethods)
 {
-	cout << "*****MANTENIMIENTO DE METODO DE PAGO*****\n" << endl;
-
 	cout << "Listado de categorias: \n";
 	printf("%10s | %-20s\n",
 		"ID",
@@ -57,14 +60,13 @@ void PaymentMethodView::listView(vector<PaymentMethod> PaymentMethods)
 PaymentMethod PaymentMethodView::editView(PaymentMethod PaymentMethod)
 {
 	string buffer;
-	cout << "*****MANTENIMIENTO DE METODO DE PAGO*****" << endl;
-	cout << '\n';
+	showTitle();
 
-	printf("editar categoria ID(%d): \n", PaymentMethod.getId());
+	printf("EDITANDO PERSONA #(%d): \n", PaymentMethod.getId());
 	cin.clear();
 	cin.sync();
 
-	cout << "Nombre: ";
+	cout << "Introduzca el Nombre: ";
 	getline(cin, buffer);
 
 	if (!buffer.empty())

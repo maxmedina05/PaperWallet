@@ -1,6 +1,5 @@
 #include "AccountView.h"
 
-
 AccountView::AccountView()
 {
 	
@@ -11,20 +10,25 @@ AccountView::~AccountView()
 	
 }
 
-void AccountView::OnCreate()
+void AccountView::showTitle()
 {
-	//showMenu();
+	cout << "*****MANTENIMIENTO DE CUENTAS*****" << endl;
+	cout << '\n';
 }
 
-void AccountView::OnDestroy()
+void AccountView::OnViewCreated()
+{
+	showTitle();
+}
+
+void AccountView::OnViewDestroyed()
 {
 	
 }
 
 void AccountView::showMenu()
 {
-	cout << "*****MANTENIMIENTO DE CUENTAS*****" << endl;
-	cout << '\n';
+	showTitle();
 
 	cout << "1. Ver Listado." << endl;
 	cout << "2. Agregar cuenta nueva." << endl;
@@ -35,51 +39,41 @@ void AccountView::showMenu()
 
 }
 
-void AccountView::listView(vector<Account> accounts)
-{
-	cout << "*****MANTENIMIENTO DE CUENTAS*****" << endl;
-	cout << '\n';
-	// std::cout << std::right << std::setw(13) << "foobar" << std::endl;
+void AccountView::listView(vector<Account> accounts){
 	cout << "Listado de cuentas: \n";
 	printf("%10s | %-20s | %-30s\n",
 		"ID",
 		"Name",
 		"Description");
 
-
 	for (int i = 0; i < 80; i++)
 		printf("-");
 
 	for (int i = 0; i < accounts.size(); i++){
-
 		printf("%10d | %-20s | %-30s\n",
 			accounts[i].getId(),
 			accounts[i].getName().c_str(),
 			accounts[i].getDescription().c_str());
 	}
-
-	cout << "0. Salir" << endl;
-
 }
 
 Account AccountView::editView(Account account)
 {
 	string buffer;
-	cout << "*****MANTENIMIENTO DE CUENTAS*****" << endl;
-	cout << '\n';
+	showTitle();
 
 	cin.clear();
 	cin.sync();
 
 	printf( "editar cuenta ID(%d): \n", account.getId());
 
-	cout << "Nombre: ";
+	cout << "Introduzca el Nombre: ";
 	getline(cin, buffer);
 
 	if (!buffer.empty())
 		account.setName(buffer);
 
-	cout << "Description: ";
+	cout << "Introduzca una breve descripcion: ";
 	getline(cin, buffer);
 
 	if (!buffer.empty())

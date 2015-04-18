@@ -15,6 +15,7 @@ class IView
 protected:
 	
 public:
-	virtual void OnCreate() = 0;
-	virtual void OnDestroy() = 0;
+	virtual void showTitle() = 0;
+	virtual void OnViewCreated() = 0;
+	virtual void OnViewDestroyed() = 0;
 };

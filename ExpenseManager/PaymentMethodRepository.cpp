@@ -11,7 +11,11 @@ PaymentMethodRepository::~PaymentMethodRepository()
 
 bool PaymentMethodRepository::add(PaymentMethod entity)
 {
+	static int idseed = 0;
+	entity.setId(idseed++);
+
 	_paymentMethods.push_back(entity);
+
 	return true;
 }
 
@@ -53,4 +57,11 @@ bool PaymentMethodRepository::remove(PaymentMethod entity)
 vector<PaymentMethod> PaymentMethodRepository::getAll()
 {
 	return _paymentMethods;
+}
+
+void PaymentMethodRepository::mockfill()
+{
+	this->add(PaymentMethod("Efectivo"));
+	this->add(PaymentMethod("Credito"));
+	this->add(PaymentMethod("Transferencia"));
 }

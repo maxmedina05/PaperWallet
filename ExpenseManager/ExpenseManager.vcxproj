@@ -85,7 +85,9 @@
     <ClCompile Include="CategoryRepository.cpp" />
     <ClCompile Include="CategoryView.cpp" />
     <ClCompile Include="Date.cpp" />
+    <ClCompile Include="HomeView.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="HomePresenter.cpp" />
     <ClCompile Include="Particular.cpp" />
     <ClCompile Include="ParticularPresenter.cpp" />
     <ClCompile Include="ParticularRepository.cpp" />
@@ -94,6 +96,9 @@
     <ClCompile Include="PaymentMethodPresenter.cpp" />
     <ClCompile Include="PaymentMethodRepository.cpp" />
     <ClCompile Include="PaymentMethodView.cpp" />
+    <ClCompile Include="RepositoryFactory.cpp" />
+    <ClCompile Include="SettingPresenter.cpp" />
+    <ClCompile Include="SettingView.cpp" />
     <ClCompile Include="TransactionPresenter.cpp" />
     <ClCompile Include="TransactionRepository.cpp" />
     <ClCompile Include="Transaction.cpp" />
@@ -109,8 +114,10 @@
     <ClInclude Include="CategoryRepository.h" />
     <ClInclude Include="CategoryView.h" />
     <ClInclude Include="Date.h" />
+    <ClInclude Include="HomeView.h" />
     <ClInclude Include="IEntity.h" />
     <ClInclude Include="IRepository.h" />
+    <ClInclude Include="HomePresenter.h" />
     <ClInclude Include="Particular.h" />
     <ClInclude Include="ParticularPresenter.h" />
     <ClInclude Include="ParticularRepository.h" />
@@ -120,6 +127,9 @@
     <ClInclude Include="PaymentMethodRepository.h" />
     <ClInclude Include="IPresenter.h" />
     <ClInclude Include="PaymentMethodView.h" />
+    <ClInclude Include="RepositoryFactory.h" />
+    <ClInclude Include="SettingPresenter.h" />
+    <ClInclude Include="SettingView.h" />
     <ClInclude Include="Transaction.h" />
     <ClInclude Include="TransactionPresenter.h" />
     <ClInclude Include="TransactionRepository.h" />

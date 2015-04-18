@@ -4,12 +4,19 @@ ParticularPresenter::ParticularPresenter(IView* view)
 	:IPresenter(view)
 {
 	_aview = static_cast<ParticularView*>(_View);
+}
 
-	LoadList();
-
-	_View->OnCreate();
+void ParticularPresenter::Initialize()
+{
+	_View->OnViewCreated();
 	OptionMenuLoop();
 }
+
+void ParticularPresenter::setRepository(ParticularRepository* particular_repo)
+{
+	_repo = particular_repo;
+}
+
 
 void ParticularPresenter::OptionMenuLoop()
 {
@@ -27,9 +34,9 @@ void ParticularPresenter::OptionMenuLoop()
 			cout << "PAGADOR = 1 BENEFICIARIO = 0:";
 			cin >> option;
 			if (option == 1)
-				_aview->listView(_repo.getAll(), Payer);
+				_aview->listView(_repo->getAll(), Payer);
 			if (option == 0)
-				_aview->listView(_repo.getAll(), Payee);
+				_aview->listView(_repo->getAll(), Payee);
 
 			break;
 		case ADD:
@@ -37,9 +44,9 @@ void ParticularPresenter::OptionMenuLoop()
 			cin >> option;
 
 			if (option == 1)
-				_repo.add(_aview->editView(Particular(Payer)));
+				_repo->add(_aview->editView(Particular(Payer)));
 			if (option == 0)
-				_repo.add(_aview->editView(Particular(Payee)));
+				_repo->add(_aview->editView(Particular(Payee)));
 
 			_aview->showSuccessfulMessage();
 			break;
@@ -47,7 +54,7 @@ void ParticularPresenter::OptionMenuLoop()
 		case EDIT:
 			cout << "ID de la persona: ";
 			cin >> option;
-			_repo.update(_aview->editView(_repo.getById(option)));
+			_repo->update(_aview->editView(_repo->getById(option)));
 			_aview->showSuccessfulMessage();
 			break;
 
@@ -59,7 +66,7 @@ void ParticularPresenter::OptionMenuLoop()
 			cin >> option;
 
 			if (option == 1){
-				_repo.remove(_repo.getById(option));
+				_repo->remove(_repo->getById(option));
 				_aview->showSuccessfulMessage();
 			}
 			break;
@@ -73,8 +80,8 @@ void ParticularPresenter::Callback()
 }
 
 void ParticularPresenter::LoadList(){
-	_repo.add(Particular("BanReservas", Payee));
-	_repo.add(Particular("PUCMM", Payee));
-	_repo.add(Particular("Supermercado Bravo", Payee));
-	_repo.add(Particular("FARD", Payer));
+	_repo->add(Particular("BanReservas", Payee));
+	_repo->add(Particular("PUCMM", Payee));
+	_repo->add(Particular("Supermercado Bravo", Payee));
+	_repo->add(Particular("FARD", Payer));
 }

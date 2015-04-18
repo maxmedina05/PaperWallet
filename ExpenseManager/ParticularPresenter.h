@@ -7,7 +7,7 @@
 class ParticularPresenter : public IPresenter{
 private:
 	ParticularView *_aview;
-	ParticularRepository _repo;
+	ParticularRepository* _repo;
 	Particular _currentParticular;
 
 public:
@@ -16,4 +16,5 @@ public:
 	void LoadList();
 	void Callback();
 	void OptionMenuLoop();
+	void setRepository(ParticularRepository* particular_repo);
 };
