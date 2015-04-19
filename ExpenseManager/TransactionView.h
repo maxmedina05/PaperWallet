@@ -19,7 +19,7 @@ public:
 	void OnViewCreated() override;
 	void OnViewDestroyed() override;
 	void showMenu();
-	void listView(vector<Transaction> transactions);
+	static void listView(vector<Transaction> transactions);
 
 	Transaction editView(Transaction transaction,
 		int type,
@@ -29,4 +29,5 @@ public:
 		vector<Particular> particulars);
 
 	void showSuccessfulMessage();
+	void showTitle();
 };

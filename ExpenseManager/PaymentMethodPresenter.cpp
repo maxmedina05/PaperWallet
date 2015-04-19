@@ -8,7 +8,7 @@ PaymentMethodPresenter::PaymentMethodPresenter(IView* view)
 
 void PaymentMethodPresenter::Initialize()
 {
-	_View->OnViewCreated();
+	//_View->OnViewCreated();
 	OptionMenuLoop();
 }
 

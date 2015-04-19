@@ -26,7 +26,7 @@ void SettingPresenter::OptionMenuLoop()
 	int option = -1;
 	while (true)
 	{
-		_aview->showTitle();
+		_aview->showMenu();
 		cout << "Seleccione una opcion: ";
 		cin >> option;
 
@@ -91,4 +91,10 @@ void SettingPresenter::startPaymentMethodActivity()
 void SettingPresenter::Callback()
 {
 
+}
+
+
+void SettingPresenter::setFactory(RepositoryFactory *factory)
+{
+	_factory = factory;
 }

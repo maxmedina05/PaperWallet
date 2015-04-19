@@ -8,7 +8,7 @@ AccountPresenter::AccountPresenter(IView* view)
 
 void AccountPresenter::Initialize()
 {
-	_View->OnViewCreated();
+	//_View->OnViewCreated();
 	OptionMenuLoop();
 }
 

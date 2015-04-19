@@ -20,7 +20,6 @@ void SettingView::OnViewDestroyed() {
 
 void SettingView::showMenu()
 {
-	showTitle();
 	cout << "1. Account" << endl;
 	cout << "2. Category" << endl;
 	cout << "3. Particular" << endl;

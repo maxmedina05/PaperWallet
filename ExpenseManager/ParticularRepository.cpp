@@ -13,7 +13,7 @@ ParticularRepository::~ParticularRepository()
 bool ParticularRepository::add(Particular entity)
 {
 	static int idseed = 0;
-	entity.setId(idseed);
+	entity.setId(idseed++);
 
 	_particulars.push_back(entity);
 	return true;

@@ -10,6 +10,7 @@ Particular::~Particular(){
 Particular::Particular(string name, ParticularType type){
 	_name = name;
 	_particularType = type;
+	_Id = 0;
 }
 
 void Particular::setName(string name){

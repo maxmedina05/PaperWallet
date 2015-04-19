@@ -8,7 +8,7 @@ ParticularPresenter::ParticularPresenter(IView* view)
 
 void ParticularPresenter::Initialize()
 {
-	_View->OnViewCreated();
+	//_View->OnViewCreated();
 	OptionMenuLoop();
 }
 

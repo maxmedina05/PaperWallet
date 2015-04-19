@@ -9,7 +9,7 @@ CategoryPresenter::CategoryPresenter(IView* view)
 
 void CategoryPresenter::Initialize()
 {
-	_View->OnViewCreated();
+	//_View->OnViewCreated();
 	OptionMenuLoop();
 }
 

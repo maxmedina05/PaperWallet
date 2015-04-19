@@ -15,6 +15,7 @@ TransactionView::~TransactionView()
 void TransactionView::OnViewCreated()
 {
 	//showMenu();
+	showTitle();
 }
 
 void TransactionView::OnViewDestroyed()
@@ -22,11 +23,14 @@ void TransactionView::OnViewDestroyed()
 
 }
 
-void TransactionView::showMenu()
+void TransactionView::showTitle()
 {
 	cout << "*****MANTENIMIENTO DE TRANSACCION*****" << endl;
 	cout << '\n';
+}
 
+void TransactionView::showMenu()
+{
 	cout << "1. Ver Listado." << endl;
 	cout << "2. Agregar transacion." << endl;
 	cout << "3. Editar transacion." << endl;
@@ -37,8 +41,6 @@ void TransactionView::showMenu()
 
 void TransactionView::listView(vector<Transaction> Transactions)
 {
-	cout << "*****MANTENIMIENTO DE TRANSACCION*****\n" << endl;
-
 	cout << "Listado de transacciones: \n";
 	printf("%8s|%10s|%10s|%10s|%10s|%10s|%10s\n",
 		"ID",
@@ -92,8 +94,8 @@ Transaction TransactionView::editView(Transaction Transaction,
 	cout << "Introduzca el monto: ";
 	cin >> rvalue;
 
-	if (rvalue != 0)
-		Transaction.setAmount(rvalue);
+	if (rvalue > 0)
+		Transaction.setAmount((type == EXPENSE) ? (-1*rvalue) : rvalue);
 
 	if (type == INCOME){
 		Transaction.setCategory(categories[0]);

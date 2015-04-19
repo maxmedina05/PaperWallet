@@ -13,6 +13,7 @@ Account::~Account()
 Account::Account(string name, string description){
 	_name = name;
 	_description = description;
+	_Id = 0;
 }
 
 void Account::setName(string name){

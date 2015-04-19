@@ -6,6 +6,7 @@ Category::Category()
 
 Category::Category(string name){
 	_name = name;
+	_Id = 0;
 }
 
 Category::~Category()

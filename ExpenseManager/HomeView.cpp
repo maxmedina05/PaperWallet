@@ -38,7 +38,7 @@ void HomeView::showMenu()
 	cout << endl;
 }
 
-void showResume(float balance, float incomes, float expenses)
+void HomeView::showResume(double balance, double incomes, double expenses)
 {
 	printf("Balance: \t\t%20.2f\n", balance);
 	printf("Ingresos de este mes:   %20.2f\n", incomes);
