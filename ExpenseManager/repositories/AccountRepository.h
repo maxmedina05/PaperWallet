@@ -3,10 +3,11 @@
 #include <vector>
 #include "../models/Account.h"
 
+
 class AccountRepository : public IRepository<Account>{
 private:
 	vector<Account> _accounts;
-
+	int getSeed();
 public:
 	AccountRepository();
 	~AccountRepository();
@@ -17,6 +18,9 @@ public:
 	virtual bool remove(Account entity) override;
 	virtual vector<Account> getAll() override;
 
+
 	void mockFill();
+	Account getFirst();
+	void fill(vector<Account> accounts);
 };
 

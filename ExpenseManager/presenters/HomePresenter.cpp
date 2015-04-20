@@ -6,6 +6,7 @@
 
 HomePresenter::HomePresenter(HomeView* view)
 	:IPresenter(view){
+	
 }
 
 HomePresenter::~HomePresenter(){
@@ -21,7 +22,7 @@ void HomePresenter::UpdateDisplayValues()
 void HomePresenter::Initialize()
 {
 	//_view->OnViewCreated();
-	_currentAccount = _factory->_accountRepo->getById(0);
+	_currentAccount = _factory->_accountRepo->getFirst();
 	UpdateDisplayValues();
 
 	OptionMenuLoop();
@@ -170,5 +171,5 @@ double HomePresenter::ComputeExpense()
 	}
 
 
-	return 1*result;
+	return -1*result;
 }

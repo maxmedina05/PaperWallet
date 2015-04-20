@@ -7,7 +7,6 @@
 using namespace std;
 
 int main(){
-
 	RepositoryFactory factory;
 	PaperDatabase db;
 	db.setFactory(&factory);

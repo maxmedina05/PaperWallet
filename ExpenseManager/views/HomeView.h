@@ -9,10 +9,14 @@
 
 class HomeView : public IView
 {
+private:
+	HomeView *_presenter;
+
 public: 
 	HomeView();
 	~HomeView();
 
+	void setPresenter(HomeView *presenter);
 	void showTitle() override;
 	void OnViewCreated() override;
 	void OnViewDestroyed() override;

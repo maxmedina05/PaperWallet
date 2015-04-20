@@ -6,7 +6,8 @@
 class CategoryRepository : public IRepository<Category>{
 private:
 	vector<Category> _categories;
-
+	int getSeed();
+	Category getFirst();
 public:
 	CategoryRepository();
 	~CategoryRepository();
@@ -18,5 +19,6 @@ public:
 	virtual vector<Category> getAll() override;
 
 	void mockfill();
+	void fill(vector<Category> categories);
 };
 

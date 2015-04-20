@@ -91,7 +91,13 @@ Transaction TransactionView::editView(Transaction Transaction,
 	AccountView::listView(accounts);
 	cout << "Introduzca el codigo de la cuenta:";
 	cin >> value;
-	Transaction.setAccount(accounts[value]);
+
+	for (Account account : accounts){
+		if (account.getId() == value){
+			Transaction.setAccount(account);
+			break;
+		}
+	}
 
 	cout << "Introduzca el monto: ";
 	cin >> rvalue;
@@ -107,13 +113,25 @@ Transaction TransactionView::editView(Transaction Transaction,
 		CategoryView::listView(categories);
 		cout << "Introduzca el codigo de la categoria: ";
 		cin >> value;
-		Transaction.setCategory(categories[value]);
+
+		for (Category category : categories){
+			if (category.getId() == value){
+				Transaction.setCategory(category);
+				break;
+			}
+		}
+
 	}
 
 	PaymentMethodView::listView(methods);
 	cout << "Introduzca el codigo del metodo de pago: ";
 	cin >> value;
-	Transaction.setPaymentMethod(methods[value]);
+	for (PaymentMethod method : methods){
+		if (method.getId() == value){
+			Transaction.setPaymentMethod(method);
+			break;
+		}
+	}
 
 	if (type == INCOME){
 		ParticularView::listView(particulars, Payer);
@@ -126,7 +144,12 @@ Transaction TransactionView::editView(Transaction Transaction,
 	}
 
 	cin >> value;
-	Transaction.setParticular(particulars[value]);
+	for (Particular particular : particulars){
+		if (particular.getId() == value){
+			Transaction.setParticular(particular);
+			break;
+		}
+	}
 
 	cin.clear();
 	cin.sync();

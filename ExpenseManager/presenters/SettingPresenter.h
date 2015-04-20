@@ -8,7 +8,7 @@
 #define CATEGORY  2
 #define PARTICULAR  3
 #define PAYMENT_METHOD 4
-
+#define TRANSACTION 5
 
 class SettingPresenter : public IPresenter<SettingView>{
 private:
@@ -24,7 +24,7 @@ public:
 	void startCategoryActivity();
 	void startParticularActivity();
 	void startPaymentMethodActivity();
-
+	void startTransactionActivity();
 	void OptionMenuLoop();
 	void setFactory(RepositoryFactory *factory);
 };

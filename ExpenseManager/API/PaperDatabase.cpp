@@ -300,20 +300,13 @@ void PaperDatabase::OnCreate(){
 	vector<PaymentMethod> methods = loadPaymentMethods();
 	vector<Transaction> transactions = loadTransactions();
 
-	for (Account entity : accounts)
-		_factory->_accountRepo->add(entity);
+	_factory->_accountRepo->fill(accounts);
 
-	for (Category entity : categories)
-		_factory->_categoryRepo->add(entity);
+	_factory->_categoryRepo->fill(categories);
 
-	for (Particular entity : particulars)
-		_factory->_particularRepo->add(entity);
-
-	for (PaymentMethod entity : methods)
-		_factory->_methodRepo->add(entity);
-
-	for (Transaction entity : transactions)
-		_factory->_transactionRepo->add(entity);
+	_factory->_particularRepo->fill(particulars);
+	_factory->_methodRepo->fill(methods);
+	_factory->_transactionRepo->fill(transactions);
 }
 
 void PaperDatabase::OnDestroy(){

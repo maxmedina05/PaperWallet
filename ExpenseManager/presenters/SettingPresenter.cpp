@@ -3,6 +3,8 @@
 #include "CategoryPresenter.h"
 #include "PaymentMethodPresenter.h"
 #include "ParticularPresenter.h"
+#include "../views/TransactionView.h"
+#include "TransactionPresenter.h"
 
 SettingPresenter::SettingPresenter(SettingView* view)
 	:IPresenter(view){
@@ -45,6 +47,9 @@ void SettingPresenter::OptionMenuLoop()
 		case PAYMENT_METHOD:
 			startPaymentMethodActivity();
 			break;
+		case TRANSACTION:
+			startPaymentMethodActivity();
+			break;
 		}
 	}
 }
@@ -81,6 +86,17 @@ void SettingPresenter::startPaymentMethodActivity()
 	PaymentMethodView* view = new PaymentMethodView();
 	PaymentMethodPresenter presenter(view);
 	presenter.setRepository(_factory->_methodRepo);
+	presenter.Initialize();
+
+	delete view;
+}
+
+
+void SettingPresenter::startTransactionActivity()
+{
+	TransactionView* view = new TransactionView();
+	TransactionPresenter presenter(view);
+	presenter.setTransactionRepo(_factory->_transactionRepo);
 	presenter.Initialize();
 
 	delete view;

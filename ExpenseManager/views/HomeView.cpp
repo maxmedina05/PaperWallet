@@ -9,6 +9,11 @@ HomeView::~HomeView()
 {
 }
 
+void HomeView::setPresenter(HomeView *presenter)
+{
+	_presenter = presenter;
+}
+
 void HomeView::showTitle() {
 	cout << "**********OVERVIEW**********\n" << endl;
 }

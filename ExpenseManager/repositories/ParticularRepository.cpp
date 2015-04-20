@@ -12,8 +12,7 @@ ParticularRepository::~ParticularRepository()
 
 bool ParticularRepository::add(Particular entity)
 {
-	static int idseed = 0;
-	entity.setId(idseed++);
+	entity.setId(getSeed());
 
 	_particulars.push_back(entity);
 	return true;
@@ -65,4 +64,27 @@ void ParticularRepository::mockfill()
 	this->add(Particular("PUCMM", Payee));
 	this->add(Particular("Supermercado Bravo", Payee));
 	this->add(Particular("FARD", Payer));
+}
+int ParticularRepository::getSeed(){
+	string filepath = "API//particular_seed.data";
+
+	ifstream instream(filepath);
+	string buffer;
+	int seed = 0;
+	if (instream.is_open())
+	{
+		instream >> buffer;
+		seed = atoi(buffer.c_str());
+	}
+	instream.close();
+
+	ofstream outstream(filepath);
+	outstream << to_string(seed + 1);
+	outstream.close();
+	return seed;
+}
+
+void ParticularRepository::fill(vector<Particular> particulars)
+{
+	_particulars = particulars;
 }

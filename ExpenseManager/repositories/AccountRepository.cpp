@@ -11,9 +11,7 @@
 
  bool AccountRepository::add(Account entity)
 {
-	static int idseed = 0;
-	entity.setId(idseed++);
-
+	entity.setId(getSeed());
 	_accounts.push_back(entity);
 	return true;
 }
@@ -66,3 +64,35 @@ void AccountRepository::mockFill()
 	 this->add(Account("Credit Card", "My Credit Card."));
 	 this->add(Account("Car's loan", "The loan I had to take to by a car."));
  }
+
+int AccountRepository::getSeed(){
+	string filepath = "API//account_seed.data";
+
+	ifstream instream(filepath);
+	string buffer;
+	int seed = 0;
+	if (instream.is_open())
+	{
+		instream >> buffer;
+		seed = atoi(buffer.c_str());
+	}
+	instream.close();
+
+	ofstream outstream(filepath);
+	outstream << to_string(seed+1);
+	outstream.close();
+	return seed;
+}
+
+Account AccountRepository::getFirst()
+{
+	if (_accounts.size() > 0)
+		return _accounts[0];
+
+	return Account();
+}
+
+void AccountRepository::fill(vector<Account> accounts)
+{
+	_accounts = accounts;
+}

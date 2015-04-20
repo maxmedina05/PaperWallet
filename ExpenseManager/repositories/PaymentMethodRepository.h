@@ -6,6 +6,7 @@
 class PaymentMethodRepository : public IRepository<PaymentMethod>{
 private:
 	vector<PaymentMethod> _paymentMethods;
+	int getSeed();
 
 public:
 	PaymentMethodRepository();
@@ -18,5 +19,7 @@ public:
 	virtual vector<PaymentMethod> getAll() override;
 
 	void mockfill();
+	void fill(vector<PaymentMethod> payment_methods);
+
 };
 

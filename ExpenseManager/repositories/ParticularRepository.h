@@ -6,7 +6,7 @@
 class ParticularRepository : public IRepository<Particular>{
 private:
 	vector<Particular> _particulars;
-
+	int getSeed();
 public:
 	ParticularRepository();
 	~ParticularRepository();
@@ -18,5 +18,6 @@ public:
 	virtual vector<Particular> getAll() override;
 
 	void mockfill();
+	void fill(vector<Particular> particulars);
 };
 

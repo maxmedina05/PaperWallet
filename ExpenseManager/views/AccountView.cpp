@@ -10,6 +10,8 @@ AccountView::~AccountView()
 	
 }
 
+
+
 void AccountView::showTitle()
 {
 	cout << "*****MANTENIMIENTO DE CUENTAS*****" << endl;

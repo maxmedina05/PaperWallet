@@ -23,7 +23,6 @@ public:
 	void startSettingsActivity();
 	void OptionMenuLoop();
 	void setFactory(RepositoryFactory *factory);
-
 	double ComputeBalance();
 	double ComputeIncome();
 	double ComputeExpense();

@@ -11,9 +11,7 @@ PaymentMethodRepository::~PaymentMethodRepository()
 
 bool PaymentMethodRepository::add(PaymentMethod entity)
 {
-	static int idseed = 0;
-	entity.setId(idseed++);
-
+	entity.setId(getSeed());
 	_paymentMethods.push_back(entity);
 
 	return true;
@@ -64,4 +62,29 @@ void PaymentMethodRepository::mockfill()
 	this->add(PaymentMethod("Efectivo"));
 	this->add(PaymentMethod("Credito"));
 	this->add(PaymentMethod("Transferencia"));
+}
+
+
+int PaymentMethodRepository::getSeed(){
+	string filepath = "API//method_seed.data";
+
+	ifstream instream(filepath);
+	string buffer;
+	int seed = 0;
+	if (instream.is_open())
+	{
+		instream >> buffer;
+		seed = atoi(buffer.c_str());
+	}
+	instream.close();
+
+	ofstream outstream(filepath);
+	outstream << to_string(seed + 1);
+	outstream.close();
+	return seed;
+}
+
+void PaymentMethodRepository::fill(vector<PaymentMethod> methods)
+{
+	_paymentMethods = methods;
 }

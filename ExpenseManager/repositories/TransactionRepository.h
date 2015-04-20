@@ -6,7 +6,7 @@
 class TransactionRepository : public IRepository<Transaction>{
 private:
 	vector<Transaction> _transactions;
-
+	int getSeed();
 public:
 	TransactionRepository();
 	~TransactionRepository();
@@ -18,5 +18,6 @@ public:
 	virtual vector<Transaction> getAll() override;
 
 	void mockfill();
+	void fill(vector<Transaction> transactions);
 };
 

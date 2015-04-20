@@ -11,9 +11,7 @@ TransactionRepository::~TransactionRepository()
 
 bool TransactionRepository::add(Transaction entity)
 {
-	static int idseed = 0;
-	entity.setId(idseed++);
-
+	entity.setId(getSeed());
 	_transactions.push_back(entity);
 	return true;
 }
@@ -22,7 +20,13 @@ bool TransactionRepository::update(Transaction entity)
 {
 	for (Transaction transaction : _transactions){
 		if (transaction.getId() == entity.getId()){
-			//transaction.setName(entity.getName());
+			transaction.setAmount(entity.getAmount());
+			transaction.setDescription(entity.getDescription());
+			transaction.setAccount(entity.getAccount());
+			transaction.setCategory(entity.getCategory());
+			transaction.setParticular(entity.getParticular());
+			transaction.setPaymentMethod(entity.getPaymentMethod());
+
 			return true;
 		}
 	}
@@ -70,4 +74,29 @@ void TransactionRepository::mockfill()
 	transaction.setPaymentMethod(PaymentMethod("Cash"));
 	transaction.setDate(Date());
 	this->add(transaction);
+}
+
+
+int TransactionRepository::getSeed(){
+	string filepath = "API//transaction_seed.data";
+
+	ifstream instream(filepath);
+	string buffer;
+	int seed = 0;
+	if (instream.is_open())
+	{
+		instream >> buffer;
+		seed = atoi(buffer.c_str());
+	}
+	instream.close();
+
+	ofstream outstream(filepath);
+	outstream << to_string(seed + 1);
+	outstream.close();
+	return seed;
+}
+
+void TransactionRepository::fill(vector<Transaction> transactions)
+{
+	_transactions = transactions;
 }

@@ -12,8 +12,7 @@ CategoryRepository::~CategoryRepository()
 
 bool CategoryRepository::add(Category entity)
 {
-	static int idseed = 0;
-	entity.setId(idseed++);
+	entity.setId(getSeed());
 
 	_categories.push_back(entity);
 	return true;
@@ -63,4 +62,37 @@ void CategoryRepository::mockfill()
 	this->add(Category("Income"));
 	this->add(Category("Household"));
 	this->add(Category("Loan"));
+}
+
+int CategoryRepository::getSeed(){
+	string filepath = "API//category_seed.data";
+
+	ifstream instream(filepath);
+	string buffer;
+	int seed = 0;
+	if (instream.is_open())
+	{
+		instream >> buffer;
+		seed = atoi(buffer.c_str());
+	}
+	instream.close();
+
+	ofstream outstream(filepath);
+	outstream << to_string(seed + 1);
+	outstream.close();
+	return seed;
+}
+
+Category CategoryRepository::getFirst()
+{
+	if (_categories.size() > 0)
+		return _categories[0];
+
+	return Category();
+}
+
+
+void CategoryRepository::fill(vector<Category> collecion)
+{
+	_categories = collecion;
 }

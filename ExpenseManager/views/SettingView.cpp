@@ -24,6 +24,7 @@ void SettingView::showMenu()
 	cout << "2. Category" << endl;
 	cout << "3. Particular" << endl;
 	cout << "4. Payment Method" << endl;
+	cout << "5. Transaction" << endl;
 	cout << '\n';
 	cout << "0. Salir" << endl;
 
