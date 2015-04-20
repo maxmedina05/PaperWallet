@@ -39,178 +39,193 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Account.cpp">
-      <Filter>Source Files\models</Filter>
-    </ClCompile>
-    <ClCompile Include="Category.cpp">
-      <Filter>Source Files\models</Filter>
-    </ClCompile>
-    <ClCompile Include="Date.cpp">
-      <Filter>Source Files\models</Filter>
-    </ClCompile>
-    <ClCompile Include="Particular.cpp">
-      <Filter>Source Files\models</Filter>
-    </ClCompile>
-    <ClCompile Include="PaymentMethod.cpp">
-      <Filter>Source Files\models</Filter>
-    </ClCompile>
-    <ClCompile Include="Transaction.cpp">
-      <Filter>Source Files\models</Filter>
-    </ClCompile>
-    <ClCompile Include="AccountRepository.cpp">
-      <Filter>Source Files\repository</Filter>
-    </ClCompile>
-    <ClCompile Include="CategoryRepository.cpp">
-      <Filter>Source Files\repository</Filter>
-    </ClCompile>
-    <ClCompile Include="ParticularRepository.cpp">
-      <Filter>Source Files\repository</Filter>
-    </ClCompile>
-    <ClCompile Include="PaymentMethodRepository.cpp">
-      <Filter>Source Files\repository</Filter>
-    </ClCompile>
-    <ClCompile Include="TransactionRepository.cpp">
-      <Filter>Source Files\repository</Filter>
-    </ClCompile>
-    <ClCompile Include="AccountView.cpp">
-      <Filter>Source Files\view</Filter>
-    </ClCompile>
-    <ClCompile Include="AccountPresenter.cpp">
-      <Filter>Source Files\presenter</Filter>
-    </ClCompile>
-    <ClCompile Include="CategoryView.cpp">
-      <Filter>Source Files\view</Filter>
-    </ClCompile>
-    <ClCompile Include="CategoryPresenter.cpp">
-      <Filter>Source Files\presenter</Filter>
-    </ClCompile>
-    <ClCompile Include="ParticularView.cpp">
-      <Filter>Source Files\view</Filter>
-    </ClCompile>
-    <ClCompile Include="TransactionView.cpp">
-      <Filter>Source Files\view</Filter>
-    </ClCompile>
-    <ClCompile Include="PaymentMethodView.cpp">
-      <Filter>Source Files\view</Filter>
-    </ClCompile>
-    <ClCompile Include="ParticularPresenter.cpp">
-      <Filter>Source Files\presenter</Filter>
-    </ClCompile>
-    <ClCompile Include="PaymentMethodPresenter.cpp">
-      <Filter>Source Files\presenter</Filter>
-    </ClCompile>
-    <ClCompile Include="TransactionPresenter.cpp">
-      <Filter>Source Files\presenter</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="RepositoryFactory.cpp">
+    <ClCompile Include="models\Account.cpp">
+      <Filter>Source Files\models</Filter>
+    </ClCompile>
+    <ClCompile Include="models\Category.cpp">
+      <Filter>Source Files\models</Filter>
+    </ClCompile>
+    <ClCompile Include="models\Date.cpp">
+      <Filter>Source Files\models</Filter>
+    </ClCompile>
+    <ClCompile Include="models\Particular.cpp">
+      <Filter>Source Files\models</Filter>
+    </ClCompile>
+    <ClCompile Include="models\PaymentMethod.cpp">
+      <Filter>Source Files\models</Filter>
+    </ClCompile>
+    <ClCompile Include="presenters\AccountPresenter.cpp">
+      <Filter>Source Files\presenter</Filter>
+    </ClCompile>
+    <ClCompile Include="presenters\CategoryPresenter.cpp">
+      <Filter>Source Files\presenter</Filter>
+    </ClCompile>
+    <ClCompile Include="presenters\HomePresenter.cpp">
+      <Filter>Source Files\presenter</Filter>
+    </ClCompile>
+    <ClCompile Include="presenters\ParticularPresenter.cpp">
+      <Filter>Source Files\presenter</Filter>
+    </ClCompile>
+    <ClCompile Include="presenters\PaymentMethodPresenter.cpp">
+      <Filter>Source Files\presenter</Filter>
+    </ClCompile>
+    <ClCompile Include="presenters\SettingPresenter.cpp">
+      <Filter>Source Files\presenter</Filter>
+    </ClCompile>
+    <ClCompile Include="presenters\TransactionPresenter.cpp">
+      <Filter>Source Files\presenter</Filter>
+    </ClCompile>
+    <ClCompile Include="repositories\AccountRepository.cpp">
       <Filter>Source Files\repository</Filter>
     </ClCompile>
-    <ClCompile Include="SettingView.cpp">
+    <ClCompile Include="repositories\CategoryRepository.cpp">
+      <Filter>Source Files\repository</Filter>
+    </ClCompile>
+    <ClCompile Include="repositories\ParticularRepository.cpp">
+      <Filter>Source Files\repository</Filter>
+    </ClCompile>
+    <ClCompile Include="repositories\PaymentMethodRepository.cpp">
+      <Filter>Source Files\repository</Filter>
+    </ClCompile>
+    <ClCompile Include="repositories\RepositoryFactory.cpp">
+      <Filter>Source Files\repository</Filter>
+    </ClCompile>
+    <ClCompile Include="repositories\TransactionRepository.cpp">
+      <Filter>Source Files\repository</Filter>
+    </ClCompile>
+    <ClCompile Include="views\AccountView.cpp">
       <Filter>Source Files\view</Filter>
     </ClCompile>
-    <ClCompile Include="SettingPresenter.cpp">
-      <Filter>Source Files\presenter</Filter>
-    </ClCompile>
-    <ClCompile Include="HomeView.cpp">
+    <ClCompile Include="views\HomeView.cpp">
       <Filter>Source Files\view</Filter>
     </ClCompile>
-    <ClCompile Include="HomePresenter.cpp">
-      <Filter>Source Files\presenter</Filter>
+    <ClCompile Include="views\CategoryView.cpp">
+      <Filter>Source Files\view</Filter>
+    </ClCompile>
+    <ClCompile Include="views\ParticularView.cpp">
+      <Filter>Source Files\view</Filter>
+    </ClCompile>
+    <ClCompile Include="views\PaymentMethodView.cpp">
+      <Filter>Source Files\view</Filter>
+    </ClCompile>
+    <ClCompile Include="views\SettingView.cpp">
+      <Filter>Source Files\view</Filter>
+    </ClCompile>
+    <ClCompile Include="views\TransactionView.cpp">
+      <Filter>Source Files\view</Filter>
+    </ClCompile>
+    <ClCompile Include="models\Transaction.cpp">
+      <Filter>Source Files\models</Filter>
+    </ClCompile>
+    <ClCompile Include="API\PaperDatabase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jsoncpp.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Account.h">
+    <ClInclude Include="models\Account.h">
       <Filter>Header Files\models</Filter>
     </ClInclude>
-    <ClInclude Include="Category.h">
+    <ClInclude Include="models\Category.h">
       <Filter>Header Files\models</Filter>
     </ClInclude>
-    <ClInclude Include="Date.h">
+    <ClInclude Include="models\Date.h">
       <Filter>Header Files\models</Filter>
     </ClInclude>
-    <ClInclude Include="Particular.h">
+    <ClInclude Include="models\IEntity.h">
       <Filter>Header Files\models</Filter>
     </ClInclude>
-    <ClInclude Include="PaymentMethod.h">
+    <ClInclude Include="models\Particular.h">
       <Filter>Header Files\models</Filter>
     </ClInclude>
-    <ClInclude Include="Transaction.h">
+    <ClInclude Include="models\PaymentMethod.h">
       <Filter>Header Files\models</Filter>
     </ClInclude>
-    <ClInclude Include="IRepository.h">
+    <ClInclude Include="presenters\AccountPresenter.h">
+      <Filter>Header Files\presenter</Filter>
+    </ClInclude>
+    <ClInclude Include="presenters\CategoryPresenter.h">
+      <Filter>Header Files\presenter</Filter>
+    </ClInclude>
+    <ClInclude Include="presenters\HomePresenter.h">
+      <Filter>Header Files\presenter</Filter>
+    </ClInclude>
+    <ClInclude Include="presenters\ParticularPresenter.h">
+      <Filter>Header Files\presenter</Filter>
+    </ClInclude>
+    <ClInclude Include="presenters\PaymentMethodPresenter.h">
+      <Filter>Header Files\presenter</Filter>
+    </ClInclude>
+    <ClInclude Include="presenters\SettingPresenter.h">
+      <Filter>Header Files\presenter</Filter>
+    </ClInclude>
+    <ClInclude Include="presenters\TransactionPresenter.h">
+      <Filter>Header Files\presenter</Filter>
+    </ClInclude>
+    <ClInclude Include="repositories\AccountRepository.h">
       <Filter>Header Files\repository</Filter>
     </ClInclude>
-    <ClInclude Include="IEntity.h">
+    <ClInclude Include="repositories\CategoryRepository.h">
+      <Filter>Header Files\repository</Filter>
+    </ClInclude>
+    <ClInclude Include="repositories\IRepository.h">
+      <Filter>Header Files\repository</Filter>
+    </ClInclude>
+    <ClInclude Include="repositories\ParticularRepository.h">
+      <Filter>Header Files\repository</Filter>
+    </ClInclude>
+    <ClInclude Include="repositories\PaymentMethodRepository.h">
+      <Filter>Header Files\repository</Filter>
+    </ClInclude>
+    <ClInclude Include="repositories\RepositoryFactory.h">
+      <Filter>Header Files\repository</Filter>
+    </ClInclude>
+    <ClInclude Include="repositories\TransactionRepository.h">
+      <Filter>Header Files\repository</Filter>
+    </ClInclude>
+    <ClInclude Include="views\AccountView.h">
+      <Filter>Header Files\view</Filter>
+    </ClInclude>
+    <ClInclude Include="views\HomeView.h">
+      <Filter>Header Files\view</Filter>
+    </ClInclude>
+    <ClInclude Include="views\CategoryView.h">
+      <Filter>Header Files\view</Filter>
+    </ClInclude>
+    <ClInclude Include="views\ParticularView.h">
+      <Filter>Header Files\view</Filter>
+    </ClInclude>
+    <ClInclude Include="views\IView.h">
+      <Filter>Header Files\view</Filter>
+    </ClInclude>
+    <ClInclude Include="views\PaymentMethodView.h">
+      <Filter>Header Files\view</Filter>
+    </ClInclude>
+    <ClInclude Include="views\SettingView.h">
+      <Filter>Header Files\view</Filter>
+    </ClInclude>
+    <ClInclude Include="views\TransactionView.h">
+      <Filter>Header Files\view</Filter>
+    </ClInclude>
+    <ClInclude Include="presenters\IPresenter.h">
+      <Filter>Header Files\presenter</Filter>
+    </ClInclude>
+    <ClInclude Include="models\Transaction.h">
       <Filter>Header Files\models</Filter>
     </ClInclude>
-    <ClInclude Include="AccountRepository.h">
-      <Filter>Header Files\repository</Filter>
+    <ClInclude Include="API\PaperDatabase.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CategoryRepository.h">
-      <Filter>Header Files\repository</Filter>
+    <ClInclude Include="json\json.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="PaymentMethodRepository.h">
-      <Filter>Header Files\repository</Filter>
-    </ClInclude>
-    <ClInclude Include="ParticularRepository.h">
-      <Filter>Header Files\repository</Filter>
-    </ClInclude>
-    <ClInclude Include="TransactionRepository.h">
-      <Filter>Header Files\repository</Filter>
-    </ClInclude>
-    <ClInclude Include="IView.h">
-      <Filter>Header Files\view</Filter>
-    </ClInclude>
-    <ClInclude Include="IPresenter.h">
-      <Filter>Header Files\presenter</Filter>
-    </ClInclude>
-    <ClInclude Include="AccountView.h">
-      <Filter>Header Files\view</Filter>
-    </ClInclude>
-    <ClInclude Include="AccountPresenter.h">
-      <Filter>Header Files\presenter</Filter>
-    </ClInclude>
-    <ClInclude Include="TransactionView.h">
-      <Filter>Header Files\view</Filter>
-    </ClInclude>
-    <ClInclude Include="CategoryView.h">
-      <Filter>Header Files\view</Filter>
-    </ClInclude>
-    <ClInclude Include="ParticularView.h">
-      <Filter>Header Files\view</Filter>
-    </ClInclude>
-    <ClInclude Include="PaymentMethodView.h">
-      <Filter>Header Files\view</Filter>
-    </ClInclude>
-    <ClInclude Include="CategoryPresenter.h">
-      <Filter>Header Files\presenter</Filter>
-    </ClInclude>
-    <ClInclude Include="ParticularPresenter.h">
-      <Filter>Header Files\presenter</Filter>
-    </ClInclude>
-    <ClInclude Include="PaymentMethodPresenter.h">
-      <Filter>Header Files\presenter</Filter>
-    </ClInclude>
-    <ClInclude Include="TransactionPresenter.h">
-      <Filter>Header Files\presenter</Filter>
-    </ClInclude>
-    <ClInclude Include="RepositoryFactory.h">
-      <Filter>Header Files\repository</Filter>
-    </ClInclude>
-    <ClInclude Include="SettingView.h">
-      <Filter>Header Files\view</Filter>
-    </ClInclude>
-    <ClInclude Include="SettingPresenter.h">
-      <Filter>Header Files\presenter</Filter>
-    </ClInclude>
-    <ClInclude Include="HomeView.h">
-      <Filter>Header Files\view</Filter>
-    </ClInclude>
-    <ClInclude Include="HomePresenter.h">
-      <Filter>Header Files\presenter</Filter>
+    <ClInclude Include="json\json-forwards.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

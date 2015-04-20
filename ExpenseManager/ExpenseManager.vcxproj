@@ -38,9 +38,13 @@
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
-  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Label="UserMacros">
+    <NuGetPackageImportStamp>239af4a5</NuGetPackageImportStamp>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <Linkage-jsoncpp>
+    </Linkage-jsoncpp>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -76,67 +80,71 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Account.cpp" />
-    <ClCompile Include="AccountPresenter.cpp" />
-    <ClCompile Include="AccountRepository.cpp" />
-    <ClCompile Include="AccountView.cpp" />
-    <ClCompile Include="Category.cpp" />
-    <ClCompile Include="CategoryPresenter.cpp" />
-    <ClCompile Include="CategoryRepository.cpp" />
-    <ClCompile Include="CategoryView.cpp" />
-    <ClCompile Include="Date.cpp" />
-    <ClCompile Include="HomeView.cpp" />
+    <ClCompile Include="jsoncpp.cpp" />
+    <ClCompile Include="models\Account.cpp" />
+    <ClCompile Include="API\PaperDatabase.cpp" />
+    <ClCompile Include="presenters\AccountPresenter.cpp" />
+    <ClCompile Include="repositories\AccountRepository.cpp" />
+    <ClCompile Include="views\AccountView.cpp" />
+    <ClCompile Include="models\Category.cpp" />
+    <ClCompile Include="presenters\CategoryPresenter.cpp" />
+    <ClCompile Include="repositories\CategoryRepository.cpp" />
+    <ClCompile Include="views\CategoryView.cpp" />
+    <ClCompile Include="models\Date.cpp" />
+    <ClCompile Include="views\HomeView.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="HomePresenter.cpp" />
-    <ClCompile Include="Particular.cpp" />
-    <ClCompile Include="ParticularPresenter.cpp" />
-    <ClCompile Include="ParticularRepository.cpp" />
-    <ClCompile Include="ParticularView.cpp" />
-    <ClCompile Include="PaymentMethod.cpp" />
-    <ClCompile Include="PaymentMethodPresenter.cpp" />
-    <ClCompile Include="PaymentMethodRepository.cpp" />
-    <ClCompile Include="PaymentMethodView.cpp" />
-    <ClCompile Include="RepositoryFactory.cpp" />
-    <ClCompile Include="SettingPresenter.cpp" />
-    <ClCompile Include="SettingView.cpp" />
-    <ClCompile Include="TransactionPresenter.cpp" />
-    <ClCompile Include="TransactionRepository.cpp" />
-    <ClCompile Include="Transaction.cpp" />
-    <ClCompile Include="TransactionView.cpp" />
+    <ClCompile Include="presenters\HomePresenter.cpp" />
+    <ClCompile Include="models\Particular.cpp" />
+    <ClCompile Include="presenters\ParticularPresenter.cpp" />
+    <ClCompile Include="repositories\ParticularRepository.cpp" />
+    <ClCompile Include="views\ParticularView.cpp" />
+    <ClCompile Include="models\PaymentMethod.cpp" />
+    <ClCompile Include="presenters\PaymentMethodPresenter.cpp" />
+    <ClCompile Include="repositories\PaymentMethodRepository.cpp" />
+    <ClCompile Include="views\PaymentMethodView.cpp" />
+    <ClCompile Include="repositories\RepositoryFactory.cpp" />
+    <ClCompile Include="presenters\SettingPresenter.cpp" />
+    <ClCompile Include="views\SettingView.cpp" />
+    <ClCompile Include="presenters\TransactionPresenter.cpp" />
+    <ClCompile Include="repositories\TransactionRepository.cpp" />
+    <ClCompile Include="models\Transaction.cpp" />
+    <ClCompile Include="views\TransactionView.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Account.h" />
-    <ClInclude Include="AccountPresenter.h" />
-    <ClInclude Include="AccountRepository.h" />
-    <ClInclude Include="AccountView.h" />
-    <ClInclude Include="Category.h" />
-    <ClInclude Include="CategoryPresenter.h" />
-    <ClInclude Include="CategoryRepository.h" />
-    <ClInclude Include="CategoryView.h" />
-    <ClInclude Include="Date.h" />
-    <ClInclude Include="HomeView.h" />
-    <ClInclude Include="IEntity.h" />
-    <ClInclude Include="IRepository.h" />
-    <ClInclude Include="HomePresenter.h" />
-    <ClInclude Include="Particular.h" />
-    <ClInclude Include="ParticularPresenter.h" />
-    <ClInclude Include="ParticularRepository.h" />
-    <ClInclude Include="ParticularView.h" />
-    <ClInclude Include="PaymentMethod.h" />
-    <ClInclude Include="PaymentMethodPresenter.h" />
-    <ClInclude Include="PaymentMethodRepository.h" />
-    <ClInclude Include="IPresenter.h" />
-    <ClInclude Include="PaymentMethodView.h" />
-    <ClInclude Include="RepositoryFactory.h" />
-    <ClInclude Include="SettingPresenter.h" />
-    <ClInclude Include="SettingView.h" />
-    <ClInclude Include="Transaction.h" />
-    <ClInclude Include="TransactionPresenter.h" />
-    <ClInclude Include="TransactionRepository.h" />
-    <ClInclude Include="IView.h" />
-    <ClInclude Include="TransactionView.h" />
+    <ClInclude Include="json\json-forwards.h" />
+    <ClInclude Include="json\json.h" />
+    <ClInclude Include="models\Account.h" />
+    <ClInclude Include="API\PaperDatabase.h" />
+    <ClInclude Include="presenters\AccountPresenter.h" />
+    <ClInclude Include="repositories\AccountRepository.h" />
+    <ClInclude Include="views\AccountView.h" />
+    <ClInclude Include="models\Category.h" />
+    <ClInclude Include="presenters\CategoryPresenter.h" />
+    <ClInclude Include="repositories\CategoryRepository.h" />
+    <ClInclude Include="views\CategoryView.h" />
+    <ClInclude Include="models\Date.h" />
+    <ClInclude Include="views\HomeView.h" />
+    <ClInclude Include="models\IEntity.h" />
+    <ClInclude Include="repositories\IRepository.h" />
+    <ClInclude Include="presenters\HomePresenter.h" />
+    <ClInclude Include="views\IView.h" />
+    <ClInclude Include="models\Particular.h" />
+    <ClInclude Include="presenters\ParticularPresenter.h" />
+    <ClInclude Include="repositories\ParticularRepository.h" />
+    <ClInclude Include="views\ParticularView.h" />
+    <ClInclude Include="models\PaymentMethod.h" />
+    <ClInclude Include="presenters\PaymentMethodPresenter.h" />
+    <ClInclude Include="repositories\PaymentMethodRepository.h" />
+    <ClInclude Include="presenters\IPresenter.h" />
+    <ClInclude Include="views\PaymentMethodView.h" />
+    <ClInclude Include="repositories\RepositoryFactory.h" />
+    <ClInclude Include="presenters\SettingPresenter.h" />
+    <ClInclude Include="views\SettingView.h" />
+    <ClInclude Include="models\Transaction.h" />
+    <ClInclude Include="presenters\TransactionPresenter.h" />
+    <ClInclude Include="repositories\TransactionRepository.h" />
+    <ClInclude Include="views\TransactionView.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
-  <ImportGroup Label="ExtensionTargets">
-  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets" />
 </Project>

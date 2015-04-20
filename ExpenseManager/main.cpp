@@ -1,24 +1,26 @@
-#include <iostream>
-#include <stdio.h>
-#include <string>
-#include "RepositoryFactory.h"
-#include "IView.h"
-#include "HomeView.h"
-#include "HomePresenter.h"
+#include "repositories/RepositoryFactory.h"
+#include "views/HomeView.h"
+#include "presenters/HomePresenter.h"
+
+#include "API/PaperDatabase.h"
 
 using namespace std;
 
 int main(){
 
 	RepositoryFactory factory;
+	PaperDatabase db;
+	db.setFactory(&factory);
+	db.OnCreate();
 
-	IView* view = new HomeView();
+	HomeView* view = new HomeView();
 	HomePresenter presenter(view);
 
 	presenter.setFactory(&factory);
 
 	presenter.Initialize();
 
+	db.OnDestroy();
 	delete view;
 
 	return 0;
